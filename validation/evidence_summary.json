@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "complete_image_agreement": true,
+    "exact_primal_dual_cases": true,
+    "exact_status": true,
+    "mutation_rejection": true,
+    "mutation_rows": true,
+    "property_attacks": true,
+    "sat_cases": true,
+    "study_status": true,
+    "study_version": true
+  },
+  "failure_count": 0,
+  "failures": [],
+  "status": "PASS"
+}

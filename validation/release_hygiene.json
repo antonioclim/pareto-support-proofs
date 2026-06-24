@@ -1,0 +1,8 @@
+{
+  "bytes_scanned": 9439136,
+  "files_scanned": 1031,
+  "finding_count": 0,
+  "findings": [],
+  "schema": "pareto-support-release-hygiene-1.1",
+  "status": "PASS"
+}

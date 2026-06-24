@@ -1,0 +1,9 @@
+{
+  "certificates": 225,
+  "failure_count": 0,
+  "failures": [],
+  "p1_verified": 213,
+  "p2_validated": 12,
+  "reference_objects": 9,
+  "status": "PASS"
+}

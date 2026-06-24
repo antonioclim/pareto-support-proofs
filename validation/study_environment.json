@@ -1,0 +1,18 @@
+{
+  "architecture": "x86_64",
+  "checker_sha256": "aa3d0e19b35999a5a7b76f553bec64579215d90b2f5ea6377eb8cab92140fb85",
+  "operating_system": "Linux",
+  "packages": {
+    "Pillow": "12.2.0",
+    "PyYAML": "6.0.3",
+    "jsonschema": "4.26.0",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5"
+  },
+  "protocol_sha256": "356a26e2c79b1a6827d24e4236484ef1586c29dc835a59b4bfc202785478ff1a",
+  "python_implementation": "CPython",
+  "python_version": "3.13.5",
+  "runner_sha256": "9260a977de9f0778efb881746fa2a0a7f1ce038ae546755205b7819ca888bb2d",
+  "schema": "pareto-support-study-environment-1.0",
+  "software_version": "0.6.1"
+}

@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "affiliation_consistency": true,
+    "dual_licence_notice": true,
+    "no_contact_address": true,
+    "orcid_consistency": true,
+    "package_name": true,
+    "pep639_licence_files": true,
+    "python_support": true,
+    "release_identifier_not_embedded": true,
+    "resource_type": true,
+    "source_licence": true,
+    "title_consistency": true,
+    "version_consistency": true
+  },
+  "failure_count": 0,
+  "failures": [],
+  "schema": "pareto-support-metadata-validation-1.0",
+  "status": "PASS",
+  "version": "0.6.1"
+}

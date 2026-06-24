@@ -1,0 +1,418 @@
+{
+  "schema": "pareto-support-exact-falsification-1.0",
+  "arithmetic": "fractions.Fraction only",
+  "primal_dual_exhaustive": {
+    "instances": 3426,
+    "unsupported": 1135,
+    "supported_zero_margin": 1249,
+    "strict_positive_margin": 1042,
+    "max_atoms": 4,
+    "max_det_over_H": "3/4"
+  },
+  "property_attacks": {
+    "scale": 220,
+    "permute": 220,
+    "duplicate": 220,
+    "dominated_redundancy": 220,
+    "lipschitz": 220
+  },
+  "tightness": {
+    "families": [
+      {
+        "p": 2,
+        "sigma_checked": "-1/2",
+        "minimum_atoms": 2
+      },
+      {
+        "p": 3,
+        "sigma_checked": "-1/3",
+        "minimum_atoms": 3
+      },
+      {
+        "p": 4,
+        "sigma_checked": "-1/4",
+        "minimum_atoms": 4
+      },
+      {
+        "p": 5,
+        "sigma_checked": "-1/5",
+        "minimum_atoms": 5
+      },
+      {
+        "p": 6,
+        "sigma_checked": "-1/6",
+        "minimum_atoms": 6
+      },
+      {
+        "p": 7,
+        "sigma_checked": null,
+        "minimum_atoms": 7
+      },
+      {
+        "p": 8,
+        "sigma_checked": null,
+        "minimum_atoms": 8
+      },
+      {
+        "p": 9,
+        "sigma_checked": null,
+        "minimum_atoms": 9
+      },
+      {
+        "p": 10,
+        "sigma_checked": null,
+        "minimum_atoms": 10
+      }
+    ]
+  },
+  "coefficient_lower_bound_examples": [
+    {
+      "B": 2,
+      "vectors": [
+        [
+          2,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "coefficients": [
+        1,
+        3
+      ],
+      "sum": 4,
+      "weighted_sum": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "B": 3,
+      "vectors": [
+        [
+          3,
+          -2
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "coefficients": [
+        3,
+        5
+      ],
+      "sum": 8,
+      "weighted_sum": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "B": 5,
+      "vectors": [
+        [
+          5,
+          -4
+        ],
+        [
+          -4,
+          3
+        ]
+      ],
+      "coefficients": [
+        7,
+        9
+      ],
+      "sum": 16,
+      "weighted_sum": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "B": 10,
+      "vectors": [
+        [
+          10,
+          -9
+        ],
+        [
+          -9,
+          8
+        ]
+      ],
+      "coefficients": [
+        17,
+        19
+      ],
+      "sum": 36,
+      "weighted_sum": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "B": 25,
+      "vectors": [
+        [
+          25,
+          -24
+        ],
+        [
+          -24,
+          23
+        ]
+      ],
+      "coefficients": [
+        47,
+        49
+      ],
+      "sum": 96,
+      "weighted_sum": [
+        -1,
+        -1
+      ]
+    }
+  ],
+  "coefficient_exponent_lower_bound": [
+    {
+      "p": 2,
+      "B": 2,
+      "matrix_rows": [
+        [
+          2,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "coefficients": [
+        1,
+        3
+      ],
+      "largest_coefficient": 3,
+      "weighted_sum": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "p": 3,
+      "B": 2,
+      "matrix_rows": [
+        [
+          2,
+          -1,
+          0
+        ],
+        [
+          0,
+          2,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "coefficients": [
+        1,
+        3,
+        7
+      ],
+      "largest_coefficient": 7,
+      "weighted_sum": [
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "p": 4,
+      "B": 2,
+      "matrix_rows": [
+        [
+          2,
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "coefficients": [
+        1,
+        3,
+        7,
+        15
+      ],
+      "largest_coefficient": 15,
+      "weighted_sum": [
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "p": 3,
+      "B": 3,
+      "matrix_rows": [
+        [
+          3,
+          -1,
+          0
+        ],
+        [
+          0,
+          3,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "coefficients": [
+        1,
+        4,
+        13
+      ],
+      "largest_coefficient": 13,
+      "weighted_sum": [
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "p": 4,
+      "B": 3,
+      "matrix_rows": [
+        [
+          3,
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "coefficients": [
+        1,
+        4,
+        13,
+        40
+      ],
+      "largest_coefficient": 40,
+      "weighted_sum": [
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "p": 5,
+      "B": 3,
+      "matrix_rows": [
+        [
+          3,
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          3,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "coefficients": [
+        1,
+        4,
+        13,
+        40,
+        121
+      ],
+      "largest_coefficient": 121,
+      "weighted_sum": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    }
+  ],
+  "sat_reduction": {
+    "cases": 300,
+    "satisfiable": 203,
+    "unsatisfiable": 97,
+    "all_equivalences_passed": true
+  },
+  "verdict": "PASS"
+}

@@ -1,0 +1,308 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:pareto-support-proof:certificate:1.0.0",
+  "title": "Exact weighted-sum supportability proof object",
+  "description": "Schema-level contract. Mathematical validity is established by the independent exact checker, not by schema validation alone.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "schema_version",
+    "canonicalisation",
+    "instance_digest",
+    "problem_type",
+    "candidate",
+    "claim",
+    "trust_level",
+    "provenance",
+    "integrity"
+  ],
+  "properties": {
+    "format": {"const": "pareto-support-certificate"},
+    "schema_version": {"const": "1.0.0"},
+    "canonicalisation": {"const": "psp-json-c14n-1"},
+    "instance_digest": {"$ref": "#/$defs/digest"},
+    "problem_type": {"enum": ["explicit_image", "binary_linear", "assignment", "shortest_path"]},
+    "candidate": {"$ref": "#/$defs/evaluatedDecision"},
+    "claim": {
+      "enum": [
+        "nonnegative_weight_supportable",
+        "positive_weight_supportable",
+        "nonnegative_weight_unsupported"
+      ]
+    },
+    "trust_level": {"enum": ["P1_FULLY_CHECKABLE", "P2_TRUSTED_ORACLE"]},
+    "positive_payload": {"$ref": "#/$defs/positivePayload"},
+    "negative_payload": {"$ref": "#/$defs/negativePayload"},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "integrity": {"$ref": "#/$defs/integrity"}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"claim": {"const": "nonnegative_weight_unsupported"}},
+        "required": ["claim"]
+      },
+      "then": {
+        "required": ["negative_payload"],
+        "not": {"required": ["positive_payload"]},
+        "properties": {"trust_level": {"const": "P1_FULLY_CHECKABLE"}}
+      },
+      "else": {
+        "required": ["positive_payload"],
+        "not": {"required": ["negative_payload"]}
+      }
+    },
+    {
+      "if": {
+        "properties": {"problem_type": {"const": "binary_linear"}},
+        "required": ["problem_type", "positive_payload"]
+      },
+      "then": {
+        "properties": {
+          "positive_payload": {
+            "properties": {
+              "oracle": {
+                "properties": {
+                  "adapter": {"const": "binary_linear_exact_enumeration_reference_v1"},
+                  "proof_type": {"const": "trusted_scalar_optimum_assertion_v1"}
+                }
+              }
+            }
+          },
+          "trust_level": {"const": "P2_TRUSTED_ORACLE"}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "integerString": {"type": "string", "pattern": "^(?:0|-?[1-9][0-9]*)$"},
+    "positiveIntegerString": {"type": "string", "pattern": "^[1-9][0-9]*$"},
+    "rationalString": {"type": "string", "pattern": "^(?:0|-?[1-9][0-9]*)/[1-9][0-9]*$"},
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "decision": {"type": "object"},
+    "outcome": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/integerString"}
+    },
+    "evaluatedDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision", "decision_digest", "outcome"],
+      "properties": {
+        "decision": {"$ref": "#/$defs/decision"},
+        "decision_digest": {"$ref": "#/$defs/digest"},
+        "outcome": {"$ref": "#/$defs/outcome"}
+      }
+    },
+    "negativeAtom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision", "decision_digest", "outcome", "coefficient"],
+      "properties": {
+        "decision": {"$ref": "#/$defs/decision"},
+        "decision_digest": {"$ref": "#/$defs/digest"},
+        "outcome": {"$ref": "#/$defs/outcome"},
+        "coefficient": {"$ref": "#/$defs/positiveIntegerString"}
+      }
+    },
+    "negativePayload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["atoms", "coefficient_sum", "coordinate_sums", "strict_margin", "normalisation"],
+      "properties": {
+        "atoms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/negativeAtom"}
+        },
+        "coefficient_sum": {"$ref": "#/$defs/positiveIntegerString"},
+        "coordinate_sums": {"$ref": "#/$defs/outcome"},
+        "strict_margin": {"$ref": "#/$defs/rationalString"},
+        "normalisation": {"const": "primitive-positive-integers-gcd-1"}
+      }
+    },
+    "explicitProof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimiser_decision", "minimiser_outcome", "minimum_value", "tie_break"],
+      "properties": {
+        "minimiser_decision": {"$ref": "#/$defs/decision"},
+        "minimiser_outcome": {"$ref": "#/$defs/outcome"},
+        "minimum_value": {"$ref": "#/$defs/rationalString"},
+        "tie_break": {"const": "canonical-decision-order"}
+      }
+    },
+    "assignmentProof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimiser_decision",
+        "minimiser_outcome",
+        "minimum_value",
+        "matrix_value",
+        "constant_value",
+        "row_potentials",
+        "column_potentials"
+      ],
+      "properties": {
+        "minimiser_decision": {"$ref": "#/$defs/decision"},
+        "minimiser_outcome": {"$ref": "#/$defs/outcome"},
+        "minimum_value": {"$ref": "#/$defs/rationalString"},
+        "matrix_value": {"$ref": "#/$defs/rationalString"},
+        "constant_value": {"$ref": "#/$defs/rationalString"},
+        "row_potentials": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/rationalString"}
+        },
+        "column_potentials": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/rationalString"}
+        }
+      }
+    },
+    "shortestPathProof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimiser_decision",
+        "minimiser_outcome",
+        "minimum_value",
+        "path_value",
+        "constant_value",
+        "node_potentials"
+      ],
+      "properties": {
+        "minimiser_decision": {"$ref": "#/$defs/decision"},
+        "minimiser_outcome": {"$ref": "#/$defs/outcome"},
+        "minimum_value": {"$ref": "#/$defs/rationalString"},
+        "path_value": {"$ref": "#/$defs/rationalString"},
+        "constant_value": {"$ref": "#/$defs/rationalString"},
+        "node_potentials": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"$ref": "#/$defs/rationalString"}
+        }
+      }
+    },
+    "trustedProof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "minimiser_decision",
+        "minimiser_outcome",
+        "minimum_value",
+        "weight_scale",
+        "integer_weights",
+        "oracle_statement"
+      ],
+      "properties": {
+        "minimiser_decision": {"$ref": "#/$defs/decision"},
+        "minimiser_outcome": {"$ref": "#/$defs/outcome"},
+        "minimum_value": {"$ref": "#/$defs/rationalString"},
+        "weight_scale": {"$ref": "#/$defs/positiveIntegerString"},
+        "integer_weights": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/integerString"}
+        },
+        "oracle_statement": {"type": "string", "minLength": 40}
+      }
+    },
+    "oracleEnvelope": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["adapter", "proof_type", "proof"],
+          "properties": {
+            "adapter": {"const": "explicit_enumeration_exact_v1"},
+            "proof_type": {"const": "explicit_enumeration_v1"},
+            "proof": {"$ref": "#/$defs/explicitProof"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["adapter", "proof_type", "proof"],
+          "properties": {
+            "adapter": {"const": "assignment_exact_hungarian_v1"},
+            "proof_type": {"const": "assignment_primal_dual_v1"},
+            "proof": {"$ref": "#/$defs/assignmentProof"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["adapter", "proof_type", "proof"],
+          "properties": {
+            "adapter": {"const": "shortest_path_exact_dijkstra_v1"},
+            "proof_type": {"const": "shortest_path_potentials_v1"},
+            "proof": {"$ref": "#/$defs/shortestPathProof"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["adapter", "proof_type", "proof"],
+          "properties": {
+            "adapter": {"const": "binary_linear_exact_enumeration_reference_v1"},
+            "proof_type": {"const": "trusted_scalar_optimum_assertion_v1"},
+            "proof": {"$ref": "#/$defs/trustedProof"}
+          }
+        }
+      ]
+    },
+    "positivePayload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["weights", "weight_floor", "candidate_scalar_value", "scalar_minimum", "oracle"],
+      "properties": {
+        "weights": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/rationalString"}
+        },
+        "weight_floor": {"$ref": "#/$defs/rationalString"},
+        "candidate_scalar_value": {"$ref": "#/$defs/rationalString"},
+        "scalar_minimum": {"$ref": "#/$defs/rationalString"},
+        "oracle": {"$ref": "#/$defs/oracleEnvelope"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generator", "algorithm", "oracle_adapter", "trace_digest", "exact_arithmetic", "deterministic"],
+      "properties": {
+        "generator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "version"],
+          "properties": {
+            "name": {"type": "string", "minLength": 1},
+            "version": {"type": "string", "minLength": 1}
+          }
+        },
+        "algorithm": {"const": "exact-exchange-v1"},
+        "oracle_adapter": {"type": "string", "minLength": 1},
+        "trace_digest": {"$ref": "#/$defs/digest"},
+        "exact_arithmetic": {"const": "fractions.Fraction"},
+        "deterministic": {"const": true},
+        "context": {"type": "object"}
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "canonicalisation", "certificate_digest"],
+      "properties": {
+        "algorithm": {"const": "sha256"},
+        "canonicalisation": {"const": "psp-json-c14n-1"},
+        "certificate_digest": {"$ref": "#/$defs/digest"}
+      }
+    }
+  }
+}

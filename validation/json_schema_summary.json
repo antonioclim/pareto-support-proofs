@@ -1,0 +1,11 @@
+{
+  "failure_count": 0,
+  "failures": [],
+  "json_files_parsed": 965,
+  "schema_validated": {
+    "certificates": 234,
+    "instances": 234,
+    "traces": 234
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:pareto-support-proof:instance:1.0.0",
+  "title": "Pareto supportability instance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "schema_version", "objective_transform", "problem"],
+  "properties": {
+    "format": {"const": "pareto-support-instance"},
+    "schema_version": {"const": "1.0.0"},
+    "objective_transform": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/objectiveTransform"}
+    },
+    "problem": {
+      "oneOf": [
+        {"$ref": "#/$defs/explicitImage"},
+        {"$ref": "#/$defs/binaryLinear"},
+        {"$ref": "#/$defs/assignment"},
+        {"$ref": "#/$defs/shortestPath"}
+      ]
+    },
+    "metadata": {"type": "object"}
+  },
+  "$defs": {
+    "integerString": {"type": "string", "pattern": "^(0|-?[1-9][0-9]*)$"},
+    "positiveIntegerString": {"type": "string", "pattern": "^[1-9][0-9]*$"},
+    "integerVector": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/integerString"}
+    },
+    "objectiveTransform": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sense", "multiplier", "offset"],
+      "properties": {
+        "sense": {"enum": ["min", "max"]},
+        "multiplier": {"$ref": "#/$defs/positiveIntegerString"},
+        "offset": {"$ref": "#/$defs/integerString"}
+      }
+    },
+    "explicitImage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "alternatives"],
+      "properties": {
+        "type": {"const": "explicit_image"},
+        "alternatives": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "raw_objectives"],
+            "properties": {
+              "id": {"type": "string", "minLength": 1},
+              "raw_objectives": {"$ref": "#/$defs/integerVector"}
+            }
+          }
+        }
+      }
+    },
+    "linearConstraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficients", "sense", "rhs"],
+      "properties": {
+        "coefficients": {"$ref": "#/$defs/integerVector"},
+        "sense": {"enum": ["<=", "=", ">="]},
+        "rhs": {"$ref": "#/$defs/integerString"}
+      }
+    },
+    "linearObjective": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficients", "constant"],
+      "properties": {
+        "coefficients": {"$ref": "#/$defs/integerVector"},
+        "constant": {"$ref": "#/$defs/integerString"}
+      }
+    },
+    "binaryLinear": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "n", "constraints", "objectives"],
+      "properties": {
+        "type": {"const": "binary_linear"},
+        "n": {"type": "integer", "minimum": 1, "maximum": 256},
+        "constraints": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/linearConstraint"}
+        },
+        "objectives": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/linearObjective"}
+        }
+      }
+    },
+    "assignmentObjective": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["costs", "constant"],
+      "properties": {
+        "costs": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/integerVector"}
+        },
+        "constant": {"$ref": "#/$defs/integerString"}
+      }
+    },
+    "assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "n", "objectives"],
+      "properties": {
+        "type": {"const": "assignment"},
+        "n": {"type": "integer", "minimum": 1, "maximum": 512},
+        "objectives": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/assignmentObjective"}
+        }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "tail", "head", "costs"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "tail": {"type": "string", "minLength": 1},
+        "head": {"type": "string", "minLength": 1},
+        "costs": {"$ref": "#/$defs/integerVector"}
+      }
+    },
+    "shortestPath": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "nodes", "source", "target", "edges", "objective_constants"],
+      "properties": {
+        "type": {"const": "shortest_path"},
+        "nodes": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "source": {"type": "string", "minLength": 1},
+        "target": {"type": "string", "minLength": 1},
+        "edges": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/edge"}
+        },
+        "objective_constants": {"$ref": "#/$defs/integerVector"}
+      }
+    }
+  }
+}

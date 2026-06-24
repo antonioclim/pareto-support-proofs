@@ -1,0 +1,19 @@
+{
+  "components": {
+    "checker_imports": "PASS",
+    "corpus_replay": "PASS",
+    "json_and_schemas": "PASS",
+    "metadata": "PASS",
+    "release_hygiene": "PASS",
+    "retained_evidence": "PASS",
+    "tests": "PASS"
+  },
+  "corpus_replay": {
+    "certificates": 225,
+    "p1_verified": 213,
+    "p2_validated": 12
+  },
+  "schema": "pareto-support-release-validation-1.0",
+  "software_version": "0.6.1",
+  "status": "PASS_WITH_DECLARED_P2_BOUNDARY"
+}
