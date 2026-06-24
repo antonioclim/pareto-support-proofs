@@ -1,0 +1,8 @@
+p,uniform_coordinate_sum,proper_subsets_checked,requires_p_atoms
+2,-1,2,True
+3,-1,6,True
+4,-1,14,True
+5,-1,30,True
+6,-1,62,True
+7,-1,126,True
+8,-1,254,True
