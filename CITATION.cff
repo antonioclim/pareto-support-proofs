@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "Please cite the exact archived software release used in your work."
+title: "Pareto Support Proofs: exact certificates and standalone verification"
+type: software
+authors:
+  - family-names: Clim
+    given-names: Antonio
+    orcid: "https://orcid.org/0000-0003-4745-0431"
+    affiliation: "Bucharest University of Economic Studies"
+version: 0.6.1
+license: BSD-3-Clause
+abstract: >-
+  An exact generator, a standalone checker, machine-readable schemas and
+  retained computational evidence for proof objects of non-negative
+  weighted-sum supportability and unsupportedness in finite multi-objective
+  optimisation.
+keywords:
+  - multi-objective optimisation
+  - weighted-sum supportability
+  - unsupportedness
+  - proof certificates
+  - exact verification
+  - reproducibility

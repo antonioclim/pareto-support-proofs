@@ -1,0 +1,36 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Pareto Support Proofs",
+  "description": "Exact proof objects and standalone verification for non-negative weighted-sum supportability and unsupportedness in finite multi-objective optimisation.",
+  "version": "0.6.1",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Antonio",
+      "familyName": "Clim",
+      "identifier": "https://orcid.org/0000-0003-4745-0431",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Bucharest University of Economic Studies"
+      }
+    }
+  ],
+  "license": "https://spdx.org/licenses/BSD-3-Clause.html",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python >=3.11",
+  "applicationCategory": "Scientific software",
+  "isAccessibleForFree": true,
+  "keywords": [
+    "multi-objective optimisation",
+    "weighted-sum supportability",
+    "unsupportedness",
+    "proof certificates",
+    "exact arithmetic",
+    "independent verification"
+  ],
+  "softwareRequirements": [
+    "Python >=3.11",
+    "No third-party runtime dependency for the standalone checker"
+  ]
+}

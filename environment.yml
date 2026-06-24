@@ -1,0 +1,13 @@
+name: pareto-support-proofs
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13.5
+  - jsonschema=4.26.0
+  - matplotlib=3.10.8
+  - numpy=2.3.5
+  - pillow=12.2.0
+  - pyyaml=6.0.3
+  - pip
+  - pip:
+      - -e .
