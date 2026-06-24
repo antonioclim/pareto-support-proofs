@@ -1,0 +1,21 @@
+{
+  "format": "pareto-support-instance",
+  "schema_version": "1.0.0",
+  "objective_transform": [
+    {"sense": "min", "multiplier": "1", "offset": "0"},
+    {"sense": "min", "multiplier": "1", "offset": "0"},
+    {"sense": "min", "multiplier": "1", "offset": "0"}
+  ],
+  "problem": {
+    "type": "explicit_image",
+    "alternatives": [
+      {"id": "x0", "raw_objectives": ["0", "0", "0"]},
+      {"id": "x1", "raw_objectives": ["-3", "1", "1"]},
+      {"id": "x2", "raw_objectives": ["1", "-3", "1"]},
+      {"id": "x3", "raw_objectives": ["1", "1", "-3"]}
+    ]
+  },
+  "metadata": {
+    "purpose": "tight three-atom negative certificate"
+  }
+}

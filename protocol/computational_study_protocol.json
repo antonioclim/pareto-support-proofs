@@ -1,0 +1,58 @@
+{
+  "study_id": "pareto-support-computational-study-v1",
+  "scope": "Computational falsification of exact proof objects for non-negative weighted-sum supportability of one selected candidate",
+  "candidate_generation": {
+    "small_random_instances": "One epsilon-constraint candidate and one SHA-256 ordered feasible control are selected before supportability classification",
+    "controlled_instances": "Candidate and challengers are fixed algebraically before certificate generation",
+    "prohibited": [
+      "Using a finite weight grid as ground truth",
+      "Selecting random-instance candidates from certificate output",
+      "Deleting failed cases after observing results"
+    ]
+  },
+  "correctness_corpus": {
+    "random_explicit": {"p": [2, 3, 4], "seeds": [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015], "alternatives": 24, "candidates_per_instance": 2},
+    "random_assignment": {"p": [2, 3, 4], "seeds": [2001, 2002, 2003, 2004, 2005], "n": 5, "candidates_per_instance": 2},
+    "random_shortest_path": {"p": [2, 3, 4], "seeds": [3001, 3002, 3003, 3004, 3005], "n": 8, "candidates_per_instance": 2},
+    "random_knapsack": {"p": [2, 3, 4], "seeds": [4001, 4002, 4003, 4004], "n": 10, "candidates_per_instance": 2},
+    "controlled_tight": {"p": [2, 3, 4, 5]},
+    "narrow_support_interval": {"q": [100000, 1000000, 10000000]},
+    "reference_regression": 9
+  },
+  "scaling_corpus": {
+    "assignment_positive": {"n": [20, 40, 60], "p": [2, 3, 4]},
+    "shortest_path": {"path_length": [20, 100, 400], "p": [2, 3, 4], "claims": ["supportable", "unsupported"], "background_paths": "2^path_length"}
+  },
+  "baselines": [
+    "Independent exact support-polytope vertex enumeration over the complete nondominated image",
+    "Exact Pareto-dominance scan",
+    "Exact analytic support interval for p=2",
+    "Fixed weight grids with denominators 100, 1000 and 10000",
+    "Standalone standard-library checker replay"
+  ],
+  "research_questions": [
+    {"id": "RQ1", "question": "Does the generator agree with independent exact complete-image classification?", "acceptance": "Complete agreement and no checker rejection on the fixed correctness corpus"},
+    {"id": "RQ2", "question": "Are all emitted negative certificates sparse and exact?", "acceptance": "Every negative object has between one and p atoms and passes independent replay"},
+    {"id": "RQ3", "question": "Is the p-atom bound sharp in controlled dimensions?", "acceptance": "Generated tight cases attain p atoms for p=2,...,5 and the direct construction is verified through p=8"},
+    {"id": "RQ4", "question": "Can a fixed weight grid miss an exactly supportable candidate?", "acceptance": "At least one exact false negative for each declared grid"},
+    {"id": "RQ5", "question": "Does local checking reduce audit cost on large negative cases?", "acceptance": "Median in-process checker time is below generation time in every timed large negative case"},
+    {"id": "RQ6", "question": "Are the trust boundary and mutation defences explicit?", "acceptance": "No P2 object is reported as P1 and all 24 resealed semantic mutations are rejected"}
+  ],
+  "timing": {
+    "warm_up_repetitions": 3,
+    "measured_repetitions": 30,
+    "clock": "time.perf_counter_ns",
+    "statistics": ["median", "Q1", "Q3", "IQR", "deterministic bootstrap 95% interval"],
+    "bootstrap_resamples": 3000,
+    "thread_policy": "single Python process with no parallel experimental execution"
+  },
+  "mutation_checks": {"resealed_semantic_mutations": 24, "require_rejection": true},
+  "failure_policy": {"retain_all_failures": true, "no_case_deletion_after_execution": true, "critical_failures_invalidate_results": true},
+  "interpretive_limits": [
+    "Controlled large negative cases are theorem-targeted constructions and not prevalence samples",
+    "Positive binary-linear certificates remain P2 under the current checker contract",
+    "Atom count is not a universal byte-size bound",
+    "Single-environment timings are descriptive rather than a portable performance ranking",
+    "The study concerns weighted-sum supportability and not completeness of nonlinear scalarisations"
+  ]
+}

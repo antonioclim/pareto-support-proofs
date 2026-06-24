@@ -1,0 +1,43 @@
+{
+  "format": "pareto-support-instance",
+  "schema_version": "1.0.0",
+  "objective_transform": [
+    {"sense": "min", "multiplier": "1", "offset": "0"},
+    {"sense": "min", "multiplier": "1", "offset": "0"},
+    {"sense": "min", "multiplier": "1", "offset": "0"}
+  ],
+  "problem": {
+    "type": "assignment",
+    "n": 4,
+    "objectives": [
+      {
+        "costs": [
+          ["1", "14", "13", "15"],
+          ["12", "2", "16", "14"],
+          ["15", "13", "3", "12"],
+          ["14", "16", "12", "4"]
+        ],
+        "constant": "0"
+      },
+      {
+        "costs": [
+          ["4", "13", "15", "14"],
+          ["16", "3", "12", "15"],
+          ["13", "14", "2", "16"],
+          ["15", "12", "14", "1"]
+        ],
+        "constant": "0"
+      },
+      {
+        "costs": [
+          ["2", "12", "16", "13"],
+          ["14", "2", "13", "16"],
+          ["12", "15", "2", "14"],
+          ["16", "13", "15", "2"]
+        ],
+        "constant": "0"
+      }
+    ]
+  },
+  "metadata": {"purpose": "P1 assignment primal-dual certificate"}
+}

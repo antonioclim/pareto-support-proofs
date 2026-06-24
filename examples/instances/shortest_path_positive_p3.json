@@ -1,0 +1,26 @@
+{
+  "format": "pareto-support-instance",
+  "schema_version": "1.0.0",
+  "objective_transform": [
+    {"sense": "min", "multiplier": "1", "offset": "0"},
+    {"sense": "min", "multiplier": "1", "offset": "0"},
+    {"sense": "min", "multiplier": "1", "offset": "0"}
+  ],
+  "problem": {
+    "type": "shortest_path",
+    "nodes": ["s", "a", "b", "t", "u"],
+    "source": "s",
+    "target": "t",
+    "edges": [
+      {"id": "e01", "tail": "s", "head": "a", "costs": ["1", "4", "2"]},
+      {"id": "e02", "tail": "a", "head": "t", "costs": ["1", "4", "2"]},
+      {"id": "e03", "tail": "s", "head": "b", "costs": ["4", "1", "2"]},
+      {"id": "e04", "tail": "b", "head": "t", "costs": ["4", "1", "2"]},
+      {"id": "e05", "tail": "s", "head": "t", "costs": ["5", "5", "5"]},
+      {"id": "e06", "tail": "a", "head": "b", "costs": ["2", "2", "4"]},
+      {"id": "e07", "tail": "u", "head": "t", "costs": ["0", "0", "0"]}
+    ],
+    "objective_constants": ["0", "0", "0"]
+  },
+  "metadata": {"purpose": "P1 shortest-path potential certificate with one unreachable node"}
+}
