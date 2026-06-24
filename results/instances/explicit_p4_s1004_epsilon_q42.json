@@ -1,0 +1,251 @@
+{
+  "format": "pareto-support-instance",
+  "metadata": {
+    "family": "random_explicit",
+    "seed": 41004
+  },
+  "objective_transform": [
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    }
+  ],
+  "problem": {
+    "alternatives": [
+      {
+        "id": "a000",
+        "raw_objectives": [
+          "35",
+          "105",
+          "19",
+          "85"
+        ]
+      },
+      {
+        "id": "a001",
+        "raw_objectives": [
+          "26",
+          "7",
+          "23",
+          "38"
+        ]
+      },
+      {
+        "id": "a002",
+        "raw_objectives": [
+          "59",
+          "28",
+          "50",
+          "51"
+        ]
+      },
+      {
+        "id": "a003",
+        "raw_objectives": [
+          "23",
+          "19",
+          "94",
+          "63"
+        ]
+      },
+      {
+        "id": "a004",
+        "raw_objectives": [
+          "10",
+          "104",
+          "110",
+          "16"
+        ]
+      },
+      {
+        "id": "a005",
+        "raw_objectives": [
+          "71",
+          "22",
+          "23",
+          "57"
+        ]
+      },
+      {
+        "id": "a006",
+        "raw_objectives": [
+          "65",
+          "35",
+          "110",
+          "106"
+        ]
+      },
+      {
+        "id": "a007",
+        "raw_objectives": [
+          "73",
+          "39",
+          "84",
+          "27"
+        ]
+      },
+      {
+        "id": "a008",
+        "raw_objectives": [
+          "20",
+          "105",
+          "88",
+          "102"
+        ]
+      },
+      {
+        "id": "a009",
+        "raw_objectives": [
+          "1",
+          "47",
+          "5",
+          "87"
+        ]
+      },
+      {
+        "id": "a010",
+        "raw_objectives": [
+          "108",
+          "93",
+          "61",
+          "107"
+        ]
+      },
+      {
+        "id": "a011",
+        "raw_objectives": [
+          "81",
+          "47",
+          "67",
+          "106"
+        ]
+      },
+      {
+        "id": "a012",
+        "raw_objectives": [
+          "36",
+          "47",
+          "90",
+          "83"
+        ]
+      },
+      {
+        "id": "a013",
+        "raw_objectives": [
+          "114",
+          "104",
+          "27",
+          "58"
+        ]
+      },
+      {
+        "id": "a014",
+        "raw_objectives": [
+          "73",
+          "86",
+          "113",
+          "3"
+        ]
+      },
+      {
+        "id": "a015",
+        "raw_objectives": [
+          "35",
+          "109",
+          "105",
+          "94"
+        ]
+      },
+      {
+        "id": "a016",
+        "raw_objectives": [
+          "70",
+          "116",
+          "91",
+          "54"
+        ]
+      },
+      {
+        "id": "a017",
+        "raw_objectives": [
+          "25",
+          "66",
+          "46",
+          "53"
+        ]
+      },
+      {
+        "id": "a018",
+        "raw_objectives": [
+          "17",
+          "55",
+          "66",
+          "88"
+        ]
+      },
+      {
+        "id": "a019",
+        "raw_objectives": [
+          "37",
+          "89",
+          "64",
+          "13"
+        ]
+      },
+      {
+        "id": "a020",
+        "raw_objectives": [
+          "81",
+          "75",
+          "82",
+          "9"
+        ]
+      },
+      {
+        "id": "a021",
+        "raw_objectives": [
+          "50",
+          "63",
+          "51",
+          "18"
+        ]
+      },
+      {
+        "id": "a022",
+        "raw_objectives": [
+          "8",
+          "99",
+          "114",
+          "87"
+        ]
+      },
+      {
+        "id": "a023",
+        "raw_objectives": [
+          "89",
+          "64",
+          "32",
+          "75"
+        ]
+      }
+    ],
+    "type": "explicit_image"
+  },
+  "schema_version": "1.0.0"
+}

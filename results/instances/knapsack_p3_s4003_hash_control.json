@@ -1,0 +1,107 @@
+{
+  "format": "pareto-support-instance",
+  "metadata": {
+    "capacity": 41,
+    "family": "random_knapsack",
+    "seed": 34003,
+    "weights": [
+      12,
+      7,
+      7,
+      9,
+      7,
+      6,
+      17,
+      6,
+      20,
+      6
+    ]
+  },
+  "objective_transform": [
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "max"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "max"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "max"
+    }
+  ],
+  "problem": {
+    "constraints": [
+      {
+        "coefficients": [
+          "12",
+          "7",
+          "7",
+          "9",
+          "7",
+          "6",
+          "17",
+          "6",
+          "20",
+          "6"
+        ],
+        "rhs": "41",
+        "sense": "<="
+      }
+    ],
+    "n": 10,
+    "objectives": [
+      {
+        "coefficients": [
+          "65",
+          "48",
+          "17",
+          "62",
+          "43",
+          "9",
+          "44",
+          "30",
+          "34",
+          "66"
+        ],
+        "constant": "0"
+      },
+      {
+        "coefficients": [
+          "68",
+          "28",
+          "70",
+          "56",
+          "45",
+          "13",
+          "49",
+          "70",
+          "21",
+          "27"
+        ],
+        "constant": "0"
+      },
+      {
+        "coefficients": [
+          "29",
+          "27",
+          "69",
+          "9",
+          "13",
+          "31",
+          "37",
+          "31",
+          "38",
+          "66"
+        ],
+        "constant": "0"
+      }
+    ],
+    "type": "binary_linear"
+  },
+  "schema_version": "1.0.0"
+}

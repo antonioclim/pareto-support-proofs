@@ -1,0 +1,46 @@
+{
+  "format": "pareto-support-instance",
+  "metadata": {
+    "family": "narrow_support_interval",
+    "q": 1000000
+  },
+  "objective_transform": [
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    }
+  ],
+  "problem": {
+    "alternatives": [
+      {
+        "id": "candidate",
+        "raw_objectives": [
+          "1000010",
+          "1000010"
+        ]
+      },
+      {
+        "id": "lower_cut",
+        "raw_objectives": [
+          "2000009",
+          "9"
+        ]
+      },
+      {
+        "id": "upper_cut",
+        "raw_objectives": [
+          "13",
+          "2000013"
+        ]
+      }
+    ],
+    "type": "explicit_image"
+  },
+  "schema_version": "1.0.0"
+}

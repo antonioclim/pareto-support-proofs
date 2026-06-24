@@ -1,0 +1,127 @@
+{
+  "format": "pareto-support-instance",
+  "metadata": {
+    "capacity": 37,
+    "family": "random_knapsack",
+    "seed": 44003,
+    "weights": [
+      6,
+      14,
+      6,
+      4,
+      2,
+      13,
+      14,
+      8,
+      12,
+      10
+    ]
+  },
+  "objective_transform": [
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "max"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "max"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "max"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "max"
+    }
+  ],
+  "problem": {
+    "constraints": [
+      {
+        "coefficients": [
+          "6",
+          "14",
+          "6",
+          "4",
+          "2",
+          "13",
+          "14",
+          "8",
+          "12",
+          "10"
+        ],
+        "rhs": "37",
+        "sense": "<="
+      }
+    ],
+    "n": 10,
+    "objectives": [
+      {
+        "coefficients": [
+          "30",
+          "40",
+          "67",
+          "23",
+          "48",
+          "6",
+          "8",
+          "13",
+          "70",
+          "19"
+        ],
+        "constant": "0"
+      },
+      {
+        "coefficients": [
+          "11",
+          "63",
+          "19",
+          "10",
+          "39",
+          "36",
+          "8",
+          "45",
+          "67",
+          "60"
+        ],
+        "constant": "0"
+      },
+      {
+        "coefficients": [
+          "14",
+          "6",
+          "35",
+          "32",
+          "22",
+          "11",
+          "17",
+          "32",
+          "11",
+          "12"
+        ],
+        "constant": "0"
+      },
+      {
+        "coefficients": [
+          "46",
+          "51",
+          "13",
+          "27",
+          "57",
+          "6",
+          "33",
+          "39",
+          "16",
+          "67"
+        ],
+        "constant": "0"
+      }
+    ],
+    "type": "binary_linear"
+  },
+  "schema_version": "1.0.0"
+}

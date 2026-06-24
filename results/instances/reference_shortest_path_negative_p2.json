@@ -1,0 +1,81 @@
+{
+  "format": "pareto-support-instance",
+  "metadata": {
+    "name": "two supported paths and one unsupported direct path"
+  },
+  "objective_transform": [
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    }
+  ],
+  "problem": {
+    "edges": [
+      {
+        "costs": [
+          "1",
+          "4"
+        ],
+        "head": "t",
+        "id": "e_at",
+        "tail": "a"
+      },
+      {
+        "costs": [
+          "4",
+          "1"
+        ],
+        "head": "t",
+        "id": "e_bt",
+        "tail": "b"
+      },
+      {
+        "costs": [
+          "1",
+          "4"
+        ],
+        "head": "a",
+        "id": "e_sa",
+        "tail": "s"
+      },
+      {
+        "costs": [
+          "4",
+          "1"
+        ],
+        "head": "b",
+        "id": "e_sb",
+        "tail": "s"
+      },
+      {
+        "costs": [
+          "6",
+          "6"
+        ],
+        "head": "t",
+        "id": "e_st",
+        "tail": "s"
+      }
+    ],
+    "nodes": [
+      "s",
+      "a",
+      "b",
+      "t"
+    ],
+    "objective_constants": [
+      "0",
+      "0"
+    ],
+    "source": "s",
+    "target": "t",
+    "type": "shortest_path"
+  },
+  "schema_version": "1.0.0"
+}

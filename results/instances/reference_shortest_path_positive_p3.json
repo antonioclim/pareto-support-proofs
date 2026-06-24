@@ -1,0 +1,113 @@
+{
+  "format": "pareto-support-instance",
+  "metadata": {
+    "purpose": "P1 shortest-path potential certificate with one unreachable node"
+  },
+  "objective_transform": [
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    }
+  ],
+  "problem": {
+    "edges": [
+      {
+        "costs": [
+          "1",
+          "4",
+          "2"
+        ],
+        "head": "a",
+        "id": "e01",
+        "tail": "s"
+      },
+      {
+        "costs": [
+          "1",
+          "4",
+          "2"
+        ],
+        "head": "t",
+        "id": "e02",
+        "tail": "a"
+      },
+      {
+        "costs": [
+          "4",
+          "1",
+          "2"
+        ],
+        "head": "b",
+        "id": "e03",
+        "tail": "s"
+      },
+      {
+        "costs": [
+          "4",
+          "1",
+          "2"
+        ],
+        "head": "t",
+        "id": "e04",
+        "tail": "b"
+      },
+      {
+        "costs": [
+          "5",
+          "5",
+          "5"
+        ],
+        "head": "t",
+        "id": "e05",
+        "tail": "s"
+      },
+      {
+        "costs": [
+          "2",
+          "2",
+          "4"
+        ],
+        "head": "b",
+        "id": "e06",
+        "tail": "a"
+      },
+      {
+        "costs": [
+          "0",
+          "0",
+          "0"
+        ],
+        "head": "t",
+        "id": "e07",
+        "tail": "u"
+      }
+    ],
+    "nodes": [
+      "s",
+      "a",
+      "b",
+      "t",
+      "u"
+    ],
+    "objective_constants": [
+      "0",
+      "0",
+      "0"
+    ],
+    "source": "s",
+    "target": "t",
+    "type": "shortest_path"
+  },
+  "schema_version": "1.0.0"
+}

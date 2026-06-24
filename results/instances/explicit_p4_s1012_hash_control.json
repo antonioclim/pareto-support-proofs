@@ -1,0 +1,251 @@
+{
+  "format": "pareto-support-instance",
+  "metadata": {
+    "family": "random_explicit",
+    "seed": 41012
+  },
+  "objective_transform": [
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    }
+  ],
+  "problem": {
+    "alternatives": [
+      {
+        "id": "a000",
+        "raw_objectives": [
+          "110",
+          "112",
+          "31",
+          "1"
+        ]
+      },
+      {
+        "id": "a001",
+        "raw_objectives": [
+          "101",
+          "98",
+          "75",
+          "39"
+        ]
+      },
+      {
+        "id": "a002",
+        "raw_objectives": [
+          "117",
+          "27",
+          "18",
+          "96"
+        ]
+      },
+      {
+        "id": "a003",
+        "raw_objectives": [
+          "78",
+          "92",
+          "45",
+          "104"
+        ]
+      },
+      {
+        "id": "a004",
+        "raw_objectives": [
+          "102",
+          "119",
+          "1",
+          "47"
+        ]
+      },
+      {
+        "id": "a005",
+        "raw_objectives": [
+          "77",
+          "104",
+          "77",
+          "70"
+        ]
+      },
+      {
+        "id": "a006",
+        "raw_objectives": [
+          "115",
+          "32",
+          "33",
+          "95"
+        ]
+      },
+      {
+        "id": "a007",
+        "raw_objectives": [
+          "108",
+          "101",
+          "1",
+          "57"
+        ]
+      },
+      {
+        "id": "a008",
+        "raw_objectives": [
+          "20",
+          "69",
+          "107",
+          "81"
+        ]
+      },
+      {
+        "id": "a009",
+        "raw_objectives": [
+          "95",
+          "12",
+          "50",
+          "91"
+        ]
+      },
+      {
+        "id": "a010",
+        "raw_objectives": [
+          "26",
+          "81",
+          "29",
+          "34"
+        ]
+      },
+      {
+        "id": "a011",
+        "raw_objectives": [
+          "1",
+          "107",
+          "29",
+          "108"
+        ]
+      },
+      {
+        "id": "a012",
+        "raw_objectives": [
+          "19",
+          "86",
+          "102",
+          "62"
+        ]
+      },
+      {
+        "id": "a013",
+        "raw_objectives": [
+          "101",
+          "73",
+          "18",
+          "33"
+        ]
+      },
+      {
+        "id": "a014",
+        "raw_objectives": [
+          "69",
+          "92",
+          "106",
+          "95"
+        ]
+      },
+      {
+        "id": "a015",
+        "raw_objectives": [
+          "37",
+          "88",
+          "109",
+          "52"
+        ]
+      },
+      {
+        "id": "a016",
+        "raw_objectives": [
+          "120",
+          "62",
+          "108",
+          "2"
+        ]
+      },
+      {
+        "id": "a017",
+        "raw_objectives": [
+          "27",
+          "88",
+          "88",
+          "59"
+        ]
+      },
+      {
+        "id": "a018",
+        "raw_objectives": [
+          "49",
+          "90",
+          "15",
+          "53"
+        ]
+      },
+      {
+        "id": "a019",
+        "raw_objectives": [
+          "75",
+          "16",
+          "85",
+          "26"
+        ]
+      },
+      {
+        "id": "a020",
+        "raw_objectives": [
+          "104",
+          "28",
+          "119",
+          "29"
+        ]
+      },
+      {
+        "id": "a021",
+        "raw_objectives": [
+          "108",
+          "70",
+          "79",
+          "114"
+        ]
+      },
+      {
+        "id": "a022",
+        "raw_objectives": [
+          "13",
+          "112",
+          "108",
+          "67"
+        ]
+      },
+      {
+        "id": "a023",
+        "raw_objectives": [
+          "45",
+          "58",
+          "90",
+          "11"
+        ]
+      }
+    ],
+    "type": "explicit_image"
+  },
+  "schema_version": "1.0.0"
+}

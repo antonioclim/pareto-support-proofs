@@ -1,0 +1,73 @@
+{
+  "format": "pareto-support-instance",
+  "metadata": {
+    "purpose": "P2 trusted-oracle positive certificate"
+  },
+  "objective_transform": [
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    }
+  ],
+  "problem": {
+    "constraints": [
+      {
+        "coefficients": [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "rhs": "1",
+        "sense": ">="
+      }
+    ],
+    "n": 5,
+    "objectives": [
+      {
+        "coefficients": [
+          "1",
+          "5",
+          "4",
+          "6",
+          "3"
+        ],
+        "constant": "0"
+      },
+      {
+        "coefficients": [
+          "4",
+          "1",
+          "5",
+          "3",
+          "6"
+        ],
+        "constant": "0"
+      },
+      {
+        "coefficients": [
+          "2",
+          "3",
+          "1",
+          "5",
+          "4"
+        ],
+        "constant": "0"
+      }
+    ],
+    "type": "binary_linear"
+  },
+  "schema_version": "1.0.0"
+}

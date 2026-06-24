@@ -1,0 +1,119 @@
+{
+  "format": "pareto-support-instance",
+  "metadata": {
+    "purpose": "implicit P1 negative assignment certificate",
+    "search_seed": "20260623",
+    "trial": 2
+  },
+  "objective_transform": [
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    }
+  ],
+  "problem": {
+    "n": 4,
+    "objectives": [
+      {
+        "constant": "0",
+        "costs": [
+          [
+            "23",
+            "27",
+            "17",
+            "25"
+          ],
+          [
+            "15",
+            "6",
+            "29",
+            "17"
+          ],
+          [
+            "14",
+            "6",
+            "15",
+            "17"
+          ],
+          [
+            "0",
+            "2",
+            "19",
+            "2"
+          ]
+        ]
+      },
+      {
+        "constant": "0",
+        "costs": [
+          [
+            "26",
+            "0",
+            "22",
+            "30"
+          ],
+          [
+            "10",
+            "19",
+            "1",
+            "15"
+          ],
+          [
+            "27",
+            "24",
+            "13",
+            "21"
+          ],
+          [
+            "1",
+            "13",
+            "26",
+            "2"
+          ]
+        ]
+      },
+      {
+        "constant": "0",
+        "costs": [
+          [
+            "28",
+            "14",
+            "25",
+            "14"
+          ],
+          [
+            "25",
+            "28",
+            "6",
+            "29"
+          ],
+          [
+            "25",
+            "29",
+            "13",
+            "12"
+          ],
+          [
+            "21",
+            "1",
+            "17",
+            "15"
+          ]
+        ]
+      }
+    ],
+    "type": "assignment"
+  },
+  "schema_version": "1.0.0"
+}

@@ -1,0 +1,251 @@
+{
+  "format": "pareto-support-instance",
+  "metadata": {
+    "family": "random_explicit",
+    "seed": 41009
+  },
+  "objective_transform": [
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    }
+  ],
+  "problem": {
+    "alternatives": [
+      {
+        "id": "a000",
+        "raw_objectives": [
+          "113",
+          "107",
+          "108",
+          "48"
+        ]
+      },
+      {
+        "id": "a001",
+        "raw_objectives": [
+          "99",
+          "74",
+          "21",
+          "17"
+        ]
+      },
+      {
+        "id": "a002",
+        "raw_objectives": [
+          "15",
+          "7",
+          "2",
+          "25"
+        ]
+      },
+      {
+        "id": "a003",
+        "raw_objectives": [
+          "68",
+          "9",
+          "120",
+          "27"
+        ]
+      },
+      {
+        "id": "a004",
+        "raw_objectives": [
+          "56",
+          "60",
+          "83",
+          "109"
+        ]
+      },
+      {
+        "id": "a005",
+        "raw_objectives": [
+          "26",
+          "63",
+          "89",
+          "61"
+        ]
+      },
+      {
+        "id": "a006",
+        "raw_objectives": [
+          "39",
+          "25",
+          "8",
+          "114"
+        ]
+      },
+      {
+        "id": "a007",
+        "raw_objectives": [
+          "14",
+          "21",
+          "44",
+          "46"
+        ]
+      },
+      {
+        "id": "a008",
+        "raw_objectives": [
+          "43",
+          "80",
+          "14",
+          "14"
+        ]
+      },
+      {
+        "id": "a009",
+        "raw_objectives": [
+          "117",
+          "98",
+          "38",
+          "95"
+        ]
+      },
+      {
+        "id": "a010",
+        "raw_objectives": [
+          "101",
+          "118",
+          "29",
+          "102"
+        ]
+      },
+      {
+        "id": "a011",
+        "raw_objectives": [
+          "120",
+          "84",
+          "79",
+          "11"
+        ]
+      },
+      {
+        "id": "a012",
+        "raw_objectives": [
+          "91",
+          "98",
+          "91",
+          "20"
+        ]
+      },
+      {
+        "id": "a013",
+        "raw_objectives": [
+          "59",
+          "71",
+          "75",
+          "42"
+        ]
+      },
+      {
+        "id": "a014",
+        "raw_objectives": [
+          "38",
+          "77",
+          "83",
+          "69"
+        ]
+      },
+      {
+        "id": "a015",
+        "raw_objectives": [
+          "28",
+          "31",
+          "68",
+          "65"
+        ]
+      },
+      {
+        "id": "a016",
+        "raw_objectives": [
+          "24",
+          "4",
+          "86",
+          "42"
+        ]
+      },
+      {
+        "id": "a017",
+        "raw_objectives": [
+          "66",
+          "41",
+          "37",
+          "67"
+        ]
+      },
+      {
+        "id": "a018",
+        "raw_objectives": [
+          "94",
+          "30",
+          "99",
+          "81"
+        ]
+      },
+      {
+        "id": "a019",
+        "raw_objectives": [
+          "25",
+          "98",
+          "93",
+          "36"
+        ]
+      },
+      {
+        "id": "a020",
+        "raw_objectives": [
+          "74",
+          "105",
+          "45",
+          "50"
+        ]
+      },
+      {
+        "id": "a021",
+        "raw_objectives": [
+          "103",
+          "73",
+          "80",
+          "104"
+        ]
+      },
+      {
+        "id": "a022",
+        "raw_objectives": [
+          "35",
+          "114",
+          "112",
+          "18"
+        ]
+      },
+      {
+        "id": "a023",
+        "raw_objectives": [
+          "33",
+          "119",
+          "78",
+          "16"
+        ]
+      }
+    ],
+    "type": "explicit_image"
+  },
+  "schema_version": "1.0.0"
+}
