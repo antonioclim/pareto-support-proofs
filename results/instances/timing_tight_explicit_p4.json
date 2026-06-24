@@ -1,0 +1,80 @@
+{
+  "format": "pareto-support-instance",
+  "metadata": {
+    "family": "tight_explicit",
+    "p": 4
+  },
+  "objective_transform": [
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    }
+  ],
+  "problem": {
+    "alternatives": [
+      {
+        "id": "candidate",
+        "raw_objectives": [
+          "7",
+          "7",
+          "7",
+          "7"
+        ]
+      },
+      {
+        "id": "challenger_1",
+        "raw_objectives": [
+          "3",
+          "8",
+          "8",
+          "8"
+        ]
+      },
+      {
+        "id": "challenger_2",
+        "raw_objectives": [
+          "8",
+          "3",
+          "8",
+          "8"
+        ]
+      },
+      {
+        "id": "challenger_3",
+        "raw_objectives": [
+          "8",
+          "8",
+          "3",
+          "8"
+        ]
+      },
+      {
+        "id": "challenger_4",
+        "raw_objectives": [
+          "8",
+          "8",
+          "8",
+          "3"
+        ]
+      }
+    ],
+    "type": "explicit_image"
+  },
+  "schema_version": "1.0.0"
+}

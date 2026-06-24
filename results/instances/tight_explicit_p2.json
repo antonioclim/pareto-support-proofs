@@ -1,0 +1,46 @@
+{
+  "format": "pareto-support-instance",
+  "metadata": {
+    "family": "tight_explicit",
+    "p": 2
+  },
+  "objective_transform": [
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    }
+  ],
+  "problem": {
+    "alternatives": [
+      {
+        "id": "candidate",
+        "raw_objectives": [
+          "5",
+          "5"
+        ]
+      },
+      {
+        "id": "challenger_1",
+        "raw_objectives": [
+          "3",
+          "6"
+        ]
+      },
+      {
+        "id": "challenger_2",
+        "raw_objectives": [
+          "6",
+          "3"
+        ]
+      }
+    ],
+    "type": "explicit_image"
+  },
+  "schema_version": "1.0.0"
+}
