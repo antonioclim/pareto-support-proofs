@@ -1,0 +1,24 @@
+{
+  "title": "Pareto Support Proofs: exact certificates and standalone verification",
+  "description": "An exact certificate generator, a standalone generator-independent checker, machine-readable schemas, canonical proof objects and retained computational evidence for non-negative weighted-sum supportability and unsupportedness in finite multi-objective optimisation. Negative certificates are checked with exact rational arithmetic. Positive certificate objects distinguish fully checkable adapters from binary-linear objects that retain an explicitly declared trusted-oracle boundary. Source code is licensed under BSD-3-Clause; retained instances, proof objects, generated results, figures and prose documentation are licensed under CC BY 4.0.",
+  "creators": [
+    {
+      "name": "Clim, Antonio",
+      "orcid": "0000-0003-4745-0431",
+      "affiliation": "Bucharest University of Economic Studies"
+    }
+  ],
+  "version": "0.6.1",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "bsd-3-clause",
+  "language": "eng",
+  "keywords": [
+    "multi-objective optimisation",
+    "weighted-sum supportability",
+    "unsupportedness",
+    "proof certificates",
+    "exact rational verification",
+    "reproducible optimisation software"
+  ]
+}
