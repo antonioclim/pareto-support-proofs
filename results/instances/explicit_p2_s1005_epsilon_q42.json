@@ -1,0 +1,193 @@
+{
+  "format": "pareto-support-instance",
+  "metadata": {
+    "family": "random_explicit",
+    "seed": 21005
+  },
+  "objective_transform": [
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    },
+    {
+      "multiplier": "1",
+      "offset": "0",
+      "sense": "min"
+    }
+  ],
+  "problem": {
+    "alternatives": [
+      {
+        "id": "a000",
+        "raw_objectives": [
+          "10",
+          "55"
+        ]
+      },
+      {
+        "id": "a001",
+        "raw_objectives": [
+          "106",
+          "91"
+        ]
+      },
+      {
+        "id": "a002",
+        "raw_objectives": [
+          "87",
+          "73"
+        ]
+      },
+      {
+        "id": "a003",
+        "raw_objectives": [
+          "40",
+          "46"
+        ]
+      },
+      {
+        "id": "a004",
+        "raw_objectives": [
+          "107",
+          "67"
+        ]
+      },
+      {
+        "id": "a005",
+        "raw_objectives": [
+          "114",
+          "16"
+        ]
+      },
+      {
+        "id": "a006",
+        "raw_objectives": [
+          "11",
+          "8"
+        ]
+      },
+      {
+        "id": "a007",
+        "raw_objectives": [
+          "38",
+          "16"
+        ]
+      },
+      {
+        "id": "a008",
+        "raw_objectives": [
+          "9",
+          "68"
+        ]
+      },
+      {
+        "id": "a009",
+        "raw_objectives": [
+          "52",
+          "53"
+        ]
+      },
+      {
+        "id": "a010",
+        "raw_objectives": [
+          "38",
+          "48"
+        ]
+      },
+      {
+        "id": "a011",
+        "raw_objectives": [
+          "78",
+          "61"
+        ]
+      },
+      {
+        "id": "a012",
+        "raw_objectives": [
+          "78",
+          "30"
+        ]
+      },
+      {
+        "id": "a013",
+        "raw_objectives": [
+          "40",
+          "112"
+        ]
+      },
+      {
+        "id": "a014",
+        "raw_objectives": [
+          "78",
+          "64"
+        ]
+      },
+      {
+        "id": "a015",
+        "raw_objectives": [
+          "117",
+          "38"
+        ]
+      },
+      {
+        "id": "a016",
+        "raw_objectives": [
+          "79",
+          "59"
+        ]
+      },
+      {
+        "id": "a017",
+        "raw_objectives": [
+          "10",
+          "32"
+        ]
+      },
+      {
+        "id": "a018",
+        "raw_objectives": [
+          "40",
+          "50"
+        ]
+      },
+      {
+        "id": "a019",
+        "raw_objectives": [
+          "42",
+          "80"
+        ]
+      },
+      {
+        "id": "a020",
+        "raw_objectives": [
+          "54",
+          "73"
+        ]
+      },
+      {
+        "id": "a021",
+        "raw_objectives": [
+          "79",
+          "62"
+        ]
+      },
+      {
+        "id": "a022",
+        "raw_objectives": [
+          "0",
+          "91"
+        ]
+      },
+      {
+        "id": "a023",
+        "raw_objectives": [
+          "12",
+          "112"
+        ]
+      }
+    ],
+    "type": "explicit_image"
+  },
+  "schema_version": "1.0.0"
+}
