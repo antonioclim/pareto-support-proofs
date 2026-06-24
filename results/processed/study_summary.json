@@ -1,0 +1,76 @@
+{
+  "checker_import_audit": {
+    "imports": [
+      "__future__",
+      "argparse",
+      "copy",
+      "fractions",
+      "hashlib",
+      "json",
+      "math",
+      "pathlib",
+      "re",
+      "sys",
+      "typing"
+    ],
+    "non_standard_library_imports": [],
+    "pass": true
+  },
+  "class_counts": {
+    "DOM": 73,
+    "S+": 100,
+    "S0": 0,
+    "UNS": 17
+  },
+  "correctness_agreements": 190,
+  "correctness_cases": 190,
+  "correctness_rate": 1.0,
+  "critical_failures": 0,
+  "family_counts": {
+    "assignment": 32,
+    "binary_knapsack": 24,
+    "binary_linear": 2,
+    "explicit_image": 100,
+    "shortest_path": 32
+  },
+  "grid_false_negatives": 9,
+  "grid_tests": 9,
+  "interpretive_limits": [
+    "Controlled large negative cases are theorem-targeted constructions and not prevalence samples",
+    "Positive binary-linear certificates remain P2 under the current checker contract",
+    "Atom count is not a universal byte-size bound",
+    "Single-environment timings are descriptive rather than a portable performance ranking",
+    "The study concerns weighted-sum supportability and not completeness of nonlinear scalarisations"
+  ],
+  "maximum_atoms_minus_p": 0,
+  "maximum_negative_atoms": 5,
+  "mutations": 24,
+  "mutations_rejected": 24,
+  "negative_correctness_cases": 89,
+  "negative_scaling_cases": 9,
+  "p1_correctness_cases": 178,
+  "p2_correctness_cases": 12,
+  "protocol_sha256": "356a26e2c79b1a6827d24e4236484ef1586c29dc835a59b4bfc202785478ff1a",
+  "reported_failures": 0,
+  "scaling_cases": 27,
+  "software_version": "0.6.1",
+  "tightness_dimensions": 7,
+  "timing_cases": 8,
+  "unit_tests": {
+    "exit_code": 0,
+    "pass": true,
+    "tests_reported": 28
+  },
+  "validation_checks": {
+    "atom_bound_sharpness": true,
+    "checker_import_boundary": true,
+    "complete_image_agreement": true,
+    "finite_grid_false_negatives": true,
+    "large_negative_checking_cheaper": true,
+    "negative_certificates_sparse_and_verified": true,
+    "no_critical_failures": true,
+    "trust_boundary_and_mutation_rejection": true,
+    "unit_tests": true
+  },
+  "validation_status": "PASS_WITH_DECLARED_P2_BOUNDARY"
+}
