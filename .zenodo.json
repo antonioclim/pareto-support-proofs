@@ -1,6 +1,6 @@
 {
   "title": "Pareto Support Proofs: exact certificates and standalone verification",
-  "description": "An exact certificate generator, a standalone generator-independent checker, machine-readable schemas, canonical proof objects and retained computational evidence for non-negative weighted-sum supportability and unsupportedness in finite multi-objective optimisation. Negative certificates are checked with exact rational arithmetic. Positive certificate objects distinguish fully checkable adapters from binary-linear objects that retain an explicitly declared trusted-oracle boundary. Source code is licensed under BSD-3-Clause; retained instances, proof objects, generated results, figures and prose documentation are licensed under CC BY 4.0.",
+  "description": "Local unpublished technical successor 0.6.2, prepared on 17 October 2026. No version DOI or public release tag has been assigned. Retained examples, results, protocol and validation files belong to historical engine 0.6.1 and are not outputs of this successor. An exact certificate generator, a standalone generator-independent checker, machine-readable schemas, canonical proof objects and retained computational evidence for non-negative weighted-sum supportability and unsupportedness in finite multi-objective optimisation. Negative certificates are checked with exact rational arithmetic. Positive certificate objects distinguish fully checkable adapters from binary-linear objects that retain an explicitly declared trusted-oracle boundary. Source code is licensed under BSD-3-Clause; retained instances, proof objects, generated results, figures and prose documentation are licensed under CC BY 4.0.",
   "creators": [
     {
       "name": "Clim, Antonio",
@@ -8,7 +8,7 @@
       "affiliation": "Bucharest University of Economic Studies"
     }
   ],
-  "version": "0.6.1",
+  "version": "0.6.2",
   "upload_type": "software",
   "access_right": "open",
   "license": "bsd-3-clause",
