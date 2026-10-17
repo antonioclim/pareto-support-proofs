@@ -2,7 +2,7 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "name": "Pareto Support Proofs",
-  "description": "Local unpublished technical successor 0.6.2, prepared on 17 October 2026. No version DOI or public release tag has been assigned. Retained examples, results, protocol and validation files belong to historical engine 0.6.1 and are not outputs of this successor. Exact proof objects and standalone verification for non-negative weighted-sum supportability and unsupportedness in finite multi-objective optimisation.",
+  "description": "This source engine is version 0.6.2 and is included in the published OPTL-R1-20261017 companion, released on 17 October 2026 (https://doi.org/10.5281/zenodo.23440598). The DOI identifies the complete companion distribution rather than a later source-only snapshot. Retained examples, results, protocol and validation files belong to historical engine 0.6.1 and are not outputs of this successor. Exact proof objects and standalone verification for non-negative weighted-sum supportability and unsupportedness in finite multi-objective optimisation. Historical software version 0.6.1: https://doi.org/10.5281/zenodo.20832039. Version-family DOI: https://doi.org/10.5281/zenodo.20832038.",
   "version": "0.6.2",
   "author": [
     {
@@ -33,5 +33,14 @@
     "Python >=3.11",
     "No third-party runtime dependency for the standalone checker"
   ],
-  "dateModified": "2026-10-17"
+  "dateModified": "2026-10-17",
+  "codeRepository": "https://github.com/antonioclim/pareto-support-proofs",
+  "isPartOf": {
+    "@type": "SoftwareSourceCode",
+    "name": "Pareto Support Proofs: repaired R1 controlled-reproduction companion",
+    "version": "OPTL-R1-20261017",
+    "identifier": "https://doi.org/10.5281/zenodo.23440598",
+    "url": "https://zenodo.org/records/23440598",
+    "datePublished": "2026-10-17"
+  }
 }

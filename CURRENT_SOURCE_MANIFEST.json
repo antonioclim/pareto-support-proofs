@@ -1,6 +1,6 @@
 {
   "schema": "pareto-support-current-main-source-manifest-1",
-  "scope": "Canonical0.6.2 runtime, checker, schemas and tests; retained0.6.1 evidence; explicit current-main operational overlays. Additional documentary files may be supplied separately.",
+  "scope": "Canonical0.6.2 runtime, checker and schemas; explicit current-main operational and publication-metadata/test-contract overlays; retained0.6.1 evidence. Published scientific assets and the tagged preparation snapshot remain unchanged.",
   "current_generator": "0.6.2",
   "retained_generator": "0.6.1",
   "standalone_checker": "0.6.1",
@@ -12,9 +12,14 @@
     "CURRENT_SOURCE_MANIFEST.json": "Self hash excluded"
   },
   "canonical_engine_operational_overlays": [
-    "README.md",
     ".github/workflows/ci.yml",
-    "scripts/validate_metadata.py"
+    ".zenodo.json",
+    "CITATION.cff",
+    "README.md",
+    "codemeta.json",
+    "scripts/check_current_release.py",
+    "scripts/validate_metadata.py",
+    "tests/test_release_integrity.py"
   ],
   "no_historical_results_regenerated": true,
   "files": {
@@ -31,16 +36,16 @@
       "sha256": "46202817f5fc030e909dd7a958f377e689c22564e736ccdde8117862d55cd1df"
     },
     ".zenodo.json": {
-      "bytes": 1524,
-      "sha256": "38e9601509fcaaed307c76a2ef19bda25202f91ba6e815cb1de34913fab3c410"
+      "bytes": 1939,
+      "sha256": "7f756728d91045c325381594c5e1d8ecf6aa142f0b4917b0059dd25762e94501"
     },
     "AUTHORS.md": {
       "bytes": 160,
       "sha256": "7ce2bfa8663d8515cfed484e8c77ee33a44d822b4c24fb0e10d1e87369f04aa0"
     },
     "CITATION.cff": {
-      "bytes": 918,
-      "sha256": "86ae664e5fff5037680717dc81f32fce1ab4201636a4c687d17240c96e2945fd"
+      "bytes": 1618,
+      "sha256": "12fb7d335a6c3b852563e2358521cf49b98658818996a3ec721efd2f78608479"
     },
     "Dockerfile": {
       "bytes": 434,
@@ -63,8 +68,8 @@
       "sha256": "a900c3b725c207f26c0351bd1f9eb80b97c37a1902a6b9f673ab89fff2ae577b"
     },
     "README.md": {
-      "bytes": 5846,
-      "sha256": "762415aade9f1b74b781a4fc13c390a63147a9d75b152a79e9f72fab0452be6b"
+      "bytes": 7120,
+      "sha256": "8a6dd4955efe7cfffd5ab7725f8ecfe9dcdcb86ad9129c73e6b15b698f8ba107"
     },
     "REPRODUCE.md": {
       "bytes": 2181,
@@ -79,8 +84,8 @@
       "sha256": "aa3d0e19b35999a5a7b76f553bec64579215d90b2f5ea6377eb8cab92140fb85"
     },
     "codemeta.json": {
-      "bytes": 1447,
-      "sha256": "21fc7f04096a8a2b046e4af864f121069d6645a52ebd76168e2da3920a7b454f"
+      "bytes": 2115,
+      "sha256": "17b2155e1c6e1ba266eb5c9c7e9a4b42022da830f67554371aaeba4e6a6b7ff0"
     },
     "docs/ALGORITHM_AND_CORRECTNESS.md": {
       "bytes": 2569,
@@ -3987,8 +3992,8 @@
       "sha256": "b8ae77c6ce4003e431877cb15076dbda991ebafdfc62c32211196afffb82a134"
     },
     "scripts/check_current_release.py": {
-      "bytes": 8432,
-      "sha256": "404d9d1fe29f43a984c1c424614915149cb6fa068e9783e848d403f69ee86320"
+      "bytes": 10009,
+      "sha256": "4aa949d19423cfeed3fe40ee682f7355d04a43d718294e9b081f6810daf8eff4"
     },
     "scripts/make_figure.py": {
       "bytes": 4036,
@@ -4087,8 +4092,8 @@
       "sha256": "dc3a6de537b9749079b54dba70e7520e12c2cebd1dbf350c2fcc9b42994c81cd"
     },
     "tests/test_release_integrity.py": {
-      "bytes": 4744,
-      "sha256": "1629801683c282fa507ca4b5517f432921dcad23750516c9fb110604cab51d59"
+      "bytes": 5949,
+      "sha256": "122e719ae6a2053a79a5b7b921d6061ccd6b9c6c7509d2896448fe5e3e35d6f0"
     },
     "tests/test_schemas.py": {
       "bytes": 1246,
@@ -4154,5 +4159,26 @@
       "bytes": 65,
       "sha256": "665065bc945ebab57f6a5aabef45087617bfbaadf260a1f78024375384cf427c"
     }
+  },
+  "publication_metadata_overlay": {
+    "current_distribution": "OPTL-R1-20261017",
+    "version_DOI": "10.5281/zenodo.23440598",
+    "published_date": "2026-10-17",
+    "engine_version": "0.6.2",
+    "unchanged_checker_version": "0.6.1",
+    "historical_version_DOI": "10.5281/zenodo.20832039",
+    "concept_DOI": "10.5281/zenodo.20832038",
+    "pre_overlay_main_and_preserved_tag_commit": "0bdeadb10beab463e39702458a3857cb47151b86",
+    "files": [
+      "README.md",
+      "CITATION.cff",
+      ".zenodo.json",
+      "codemeta.json",
+      "scripts/check_current_release.py",
+      "tests/test_release_integrity.py",
+      "CURRENT_SOURCE_MANIFEST.json"
+    ],
+    "published_assets_changed": false,
+    "scope": "Documentary overlay and matching metadata test contract only; no new scientific run."
   }
 }

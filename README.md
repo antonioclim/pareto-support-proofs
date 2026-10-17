@@ -40,7 +40,7 @@ The GitHub workflow is manual-only and runs one Ubuntu/Python3.12 job. A source 
 
 ## Scientific bundle and retained evidence
 
-The complete journal companion is the **OPTL-R1-20261017** distribution. Its [R1 release page](https://github.com/antonioclim/pareto-support-proofs/releases/tag/optl-r1-20261017) is the intended publication location for four assets: `ESM_1_Pareto_Support_Proofs_R1.zip`, `Fig1_Editable_Sources_R1.zip`, `PUBLIC_RELEASE_CONTEXT.md` and `SHA256SUMS.txt`. The platform record determines whether publication has occurred. The ESM contains both complete engine trees, the create-only AC3 reproduction wrapper, repaired-run evidence, scientific protocols and historical documentation. Follow its current `README_R1.txt` and `GUIDE_R1.md` for full reproduction.
+The complete journal companion is the **OPTL-R1-20261017** distribution. Its [R1 release page](https://github.com/antonioclim/pareto-support-proofs/releases/tag/optl-r1-20261017) provides the four published assets: `ESM_1_Pareto_Support_Proofs_R1.zip`, `Fig1_Editable_Sources_R1.zip`, `PUBLIC_RELEASE_CONTEXT.md` and `SHA256SUMS.txt`. The ESM contains both complete engine trees, the create-only AC3 reproduction wrapper, repaired-run evidence, scientific protocols and historical documentation. Follow its current `README_R1.txt` and `GUIDE_R1.md` for full reproduction.
 
 | Identity | Meaning |
 |---|---|
@@ -57,6 +57,16 @@ The retained root corpus contains **225 objects: 213 P1 and 12 conditional P2**.
 
 ## Citation, publication state and licences
 
-The copied engine metadata records its frozen prepublication preparation state and therefore contains no invented new DOI or release date. Actual GitHub and Zenodo records identify later publication events. The DOI [10.5281/zenodo.20832039](https://doi.org/10.5281/zenodo.20832039) identifies the **historical 0.6.1** release; it is not a new 0.6.2 or OPTL-R1-20261017 version DOI. The concept DOI is [10.5281/zenodo.20832038](https://doi.org/10.5281/zenodo.20832038).
+The published **OPTL-R1-20261017** companion is archived at [10.5281/zenodo.23440598](https://doi.org/10.5281/zenodo.23440598) (17 October 2026); its [GitHub release](https://github.com/antonioclim/pareto-support-proofs/releases/tag/optl-r1-20261017) supplies the four scientific assets. The root source engine remains **0.6.2**, the standalone checker remains **0.6.1**, and the companion distribution has its own version identity. `CITATION.cff` provides a `preferred-citation` for the complete companion; the Zenodo and CodeMeta source records link the engine to that distribution.
 
-Source code is licensed under BSD-3-Clause. Data, proof objects, figures and documentation are licensed under CC BY4.0; see `LICENSE`, `LICENSE-DATA.md` and `NOTICE`. New source and documentation work received ChatGPT and Codex assistance. Scientific responsibility and final author approval remain with Antonio Clim. These checks do not imply independent human verification or editorial acceptance.
+The DOI [10.5281/zenodo.20832039](https://doi.org/10.5281/zenodo.20832039) identifies the **historical 0.6.1** release. It is not the current companion version DOI. The concept DOI is [10.5281/zenodo.20832038](https://doi.org/10.5281/zenodo.20832038). Published asset bytes, dated engine metadata and retained historical evidence remain unchanged; current main contains this explicit postpublication metadata overlay.
+
+Source code is licensed under BSD-3-Clause. Data, proof objects, figures and documentation are licensed under CC BY4.0; see `LICENSE`, `LICENSE-DATA.md` and `NOTICE`. 
+
+## AI-assisted preparation
+
+The AI-use statement below is the current statement for this revision and supersedes earlier summaries in the accompanying preparation files.
+
+ChatGPT and Codex (OpenAI) were used to assist with drafting and editing prose, English-language revision, bibliographic verification, software debugging and restructuring, code review and the correction and implementation of additional validation scripts. Document preparation included converting mathematical expressions from LaTeX into editable Microsoft Word equations (Office Math Markup Language, OMML). AI-assisted tool execution supported the computational rerun, document checks and technical consistency checks. This assistance extended beyond copy-editing. AI outputs were not treated as independent authorities or formal verification. Antonio Clim remains responsible for the final content and its approval for submission. No generative-image model was used for the mathematical figure.
+
+These checks do not imply independent human verification or editorial acceptance.

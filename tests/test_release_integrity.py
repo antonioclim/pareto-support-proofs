@@ -41,7 +41,7 @@ class ReleaseIntegrityTests(unittest.TestCase):
         self.assertEqual(citation["license"], "BSD-3-Clause")
         self.assertEqual(archive["license"], "bsd-3-clause")
 
-    def test_public_metadata_contains_no_contact_address_or_release_identifier(self):
+    def test_public_metadata_links_published_companion_without_contact_address(self):
         paths = [
             ROOT / "pyproject.toml",
             ROOT / "CITATION.cff",
@@ -56,15 +56,32 @@ class ReleaseIntegrityTests(unittest.TestCase):
             self.assertIsNone(email.search(text), path.name)
         citation = yaml.safe_load((ROOT / "CITATION.cff").read_text(encoding="utf-8"))
         archive = json.loads((ROOT / ".zenodo.json").read_text(encoding="utf-8"))
+        codemeta = json.loads((ROOT / "codemeta.json").read_text(encoding="utf-8"))
+        companion = citation["preferred-citation"]
+        self.assertEqual(companion["type"], "software")
+        self.assertEqual(companion["version"], "OPTL-R1-20261017")
+        self.assertEqual(companion["doi"], "10.5281/zenodo.23440598")
+        self.assertEqual(str(companion["date-released"]), "2026-10-17")
+        self.assertEqual(companion["url"], "https://zenodo.org/records/23440598")
+        self.assertEqual(companion["authors"], citation["authors"])
+        self.assertEqual(companion["license"], ["BSD-3-Clause", "CC-BY-4.0"])
+        self.assertIn({"relation": "isPartOf", "identifier": "10.5281/zenodo.23440598",
+                       "scheme": "doi"}, archive["related_identifiers"])
+        part = codemeta["isPartOf"]
+        self.assertEqual(part["@type"], "SoftwareSourceCode")
+        self.assertEqual(part["version"], "OPTL-R1-20261017")
+        self.assertEqual(part["identifier"], "https://doi.org/10.5281/zenodo.23440598")
+        self.assertEqual(part["url"], "https://zenodo.org/records/23440598")
+        self.assertEqual(part["datePublished"], "2026-10-17")
+        for text in [citation["message"], archive["description"], codemeta["description"]]:
+            self.assertNotIn("unpublished", text)
+        # The source engine is part of the archived companion; no separate
+        # engine-only DOI/date is invented for a later main metadata commit.
         self.assertNotIn("doi", citation)
         self.assertNotIn("doi", archive)
         self.assertNotIn("date-released", citation)
         self.assertNotIn("publication_date", archive)
-        codemeta = json.loads((ROOT / "codemeta.json").read_text(encoding="utf-8"))
         self.assertNotIn("datePublished", codemeta)
-        self.assertIn("unpublished", citation["message"])
-        self.assertIn("unpublished", archive["description"])
-        self.assertIn("unpublished", codemeta["description"])
 
     def test_reference_manifest_and_retained_corpus_are_complete(self):
         reference = json.loads((ROOT / "examples/reference_manifest.json").read_text(encoding="utf-8"))

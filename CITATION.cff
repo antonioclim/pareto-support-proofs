@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Local unpublished technical successor 0.6.2, prepared on 17 October 2026. No version DOI or public release tag has been assigned. Cite retained historical 0.6.1 evidence separately."
+message: "Please cite the published OPTL-R1-20261017 companion using preferred-citation below. This source engine is version 0.6.2; the unchanged standalone checker is version 0.6.1. Cite retained historical 0.6.1 evidence separately."
 title: "Pareto Support Proofs: exact certificates and standalone verification"
 type: software
 authors:
@@ -21,3 +21,21 @@ keywords:
   - proof certificates
   - exact verification
   - reproducibility
+repository-code: https://github.com/antonioclim/pareto-support-proofs
+url: https://github.com/antonioclim/pareto-support-proofs
+preferred-citation:
+  type: software
+  title: 'Pareto Support Proofs: repaired R1 controlled-reproduction companion'
+  authors:
+  - family-names: Clim
+    given-names: Antonio
+    orcid: https://orcid.org/0000-0003-4745-0431
+    affiliation: Bucharest University of Economic Studies
+  version: OPTL-R1-20261017
+  doi: 10.5281/zenodo.23440598
+  date-released: '2026-10-17'
+  url: https://zenodo.org/records/23440598
+  repository-code: https://github.com/antonioclim/pareto-support-proofs
+  license:
+  - BSD-3-Clause
+  - CC-BY-4.0

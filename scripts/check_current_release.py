@@ -20,6 +20,11 @@ ROOT = Path(__file__).resolve().parents[1]
 CURRENT_VERSION = "0.6.2"
 RETAINED_GENERATOR_VERSION = "0.6.1"
 STANDALONE_CHECKER_VERSION = "0.6.1"
+DISTRIBUTION_VERSION = "OPTL-R1-20261017"
+COMPANION_DOI = "10.5281/zenodo.23440598"
+COMPANION_DATE = "2026-10-17"
+COMPANION_TITLE = "Pareto Support Proofs: repaired R1 controlled-reproduction companion"
+COMPANION_URL = "https://zenodo.org/records/23440598"
 EXPECTED_TITLE = "Pareto Support Proofs: exact certificates and standalone verification"
 CORE_PREFIXES = ("src/", "checker/", "schemas/", "tests/")
 
@@ -67,14 +72,36 @@ def validate(root: Path = ROOT) -> dict:
         assert archive["creators"][0]["orcid"] == orcid
         assert codemeta["author"][0]["identifier"].endswith(orcid)
         assert citation["authors"][0]["affiliation"] == archive["creators"][0]["affiliation"] == codemeta["author"][0]["affiliation"]["name"]
-        # These are the byte-preserved preparation metadata, not a claim that
-        # a later platform publication event did or did not occur.
+        # Root records identify engine0.6.2; the exact DOI/date belong to the
+        # published companion relation, not a newly archived source snapshot.
+        companion = citation["preferred-citation"]
+        assert companion["type"] == "software" and companion["title"] == COMPANION_TITLE
+        assert str(companion["version"]) == DISTRIBUTION_VERSION
+        assert companion["doi"] == COMPANION_DOI
+        assert str(companion["date-released"]) == COMPANION_DATE
+        assert companion["url"] == COMPANION_URL
+        assert companion["authors"] == citation["authors"]
+        assert companion["license"] == ["BSD-3-Clause", "CC-BY-4.0"]
+        assert {"relation": "isPartOf", "identifier": COMPANION_DOI,
+                "scheme": "doi"} in archive["related_identifiers"]
+        part = codemeta["isPartOf"]
+        assert part["@type"] == "SoftwareSourceCode" and part["name"] == COMPANION_TITLE
+        assert part["version"] == DISTRIBUTION_VERSION
+        assert part["identifier"] == "https://doi.org/" + COMPANION_DOI
+        assert part["url"] == COMPANION_URL and part["datePublished"] == COMPANION_DATE
+        assert all("unpublished" not in value for value in
+                   [citation["message"], archive["description"], codemeta["description"]])
+        assert all(COMPANION_DOI in value for value in
+                   [archive["description"], codemeta["description"]])
         assert "doi" not in citation and "doi" not in archive
         assert "date-released" not in citation and "publication_date" not in archive
         assert "datePublished" not in codemeta
-        assert all("unpublished" in value for value in [citation["message"], archive["description"], codemeta["description"]])
-        return {"current_generator": CURRENT_VERSION, "metadata_state": "canonical preparation snapshot",
-                "retained_generator": RETAINED_GENERATOR_VERSION, "standalone_checker": STANDALONE_CHECKER_VERSION}
+        return {"current_generator": CURRENT_VERSION,
+                "metadata_state": "source engine linked to published companion",
+                "distribution_version": DISTRIBUTION_VERSION,
+                "companion_DOI": COMPANION_DOI, "companion_date": COMPANION_DATE,
+                "retained_generator": RETAINED_GENERATOR_VERSION,
+                "standalone_checker": STANDALONE_CHECKER_VERSION}
 
     def manifest():
         manifest = load_json(root / "CURRENT_SOURCE_MANIFEST.json")
