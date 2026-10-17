@@ -10,7 +10,9 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.6.1"
+CURRENT_VERSION = "0.6.2"
+RETAINED_CORPUS_GENERATOR_VERSION = "0.6.1"
+STANDALONE_CHECKER_VERSION = "0.6.1"
 
 
 class ReleaseIntegrityTests(unittest.TestCase):
@@ -26,7 +28,11 @@ class ReleaseIntegrityTests(unittest.TestCase):
             str(archive["version"]),
             (ROOT / "VERSION").read_text(encoding="utf-8").strip(),
         }
-        self.assertEqual(versions, {VERSION})
+        self.assertEqual(versions, {CURRENT_VERSION})
+        source = (ROOT / "src/pareto_support_proofs/__init__.py").read_text(encoding="utf-8")
+        match = re.search(r'__version__ = "([^"\n]+)"', source)
+        self.assertIsNotNone(match)
+        self.assertEqual(match.group(1), CURRENT_VERSION)
         self.assertEqual(project["project"]["license"], "BSD-3-Clause")
         self.assertEqual(
             project["project"]["license-files"],
@@ -52,6 +58,13 @@ class ReleaseIntegrityTests(unittest.TestCase):
         archive = json.loads((ROOT / ".zenodo.json").read_text(encoding="utf-8"))
         self.assertNotIn("doi", citation)
         self.assertNotIn("doi", archive)
+        self.assertNotIn("date-released", citation)
+        self.assertNotIn("publication_date", archive)
+        codemeta = json.loads((ROOT / "codemeta.json").read_text(encoding="utf-8"))
+        self.assertNotIn("datePublished", codemeta)
+        self.assertIn("unpublished", citation["message"])
+        self.assertIn("unpublished", archive["description"])
+        self.assertIn("unpublished", codemeta["description"])
 
     def test_reference_manifest_and_retained_corpus_are_complete(self):
         reference = json.loads((ROOT / "examples/reference_manifest.json").read_text(encoding="utf-8"))
@@ -64,10 +77,10 @@ class ReleaseIntegrityTests(unittest.TestCase):
         for path in certificate_paths:
             payload = json.loads(path.read_text(encoding="utf-8"))
             trust_counts[payload["trust_level"]] += 1
-            self.assertEqual(payload["provenance"]["generator"]["version"], VERSION)
+            self.assertEqual(payload["provenance"]["generator"]["version"], RETAINED_CORPUS_GENERATOR_VERSION)
         self.assertEqual(trust_counts, {"P1_FULLY_CHECKABLE": 213, "P2_TRUSTED_ORACLE": 12})
 
-    def test_standalone_checker_reports_release_version(self):
+    def test_standalone_checker_reports_preserved_version(self):
         checker_path = ROOT / "checker/verify_certificate.py"
         spec = importlib.util.spec_from_file_location("release_checker_test", checker_path)
         self.assertIsNotNone(spec)
@@ -77,7 +90,7 @@ class ReleaseIntegrityTests(unittest.TestCase):
         spec.loader.exec_module(module)
         instance = module.load_json_strict(str(ROOT / "examples/instances/explicit_tight_negative_p3.json"))
         certificate = module.load_json_strict(str(ROOT / "examples/certificates/explicit_tight_negative_p3_certificate.json"))
-        self.assertEqual(module.verify(instance, certificate)["checker"]["version"], VERSION)
+        self.assertEqual(module.verify(instance, certificate)["checker"]["version"], STANDALONE_CHECKER_VERSION)
 
 
 if __name__ == "__main__":

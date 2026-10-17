@@ -2,8 +2,8 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "name": "Pareto Support Proofs",
-  "description": "Exact proof objects and standalone verification for non-negative weighted-sum supportability and unsupportedness in finite multi-objective optimisation.",
-  "version": "0.6.1",
+  "description": "Local unpublished technical successor 0.6.2, prepared on 17 October 2026. No version DOI or public release tag has been assigned. Retained examples, results, protocol and validation files belong to historical engine 0.6.1 and are not outputs of this successor. Exact proof objects and standalone verification for non-negative weighted-sum supportability and unsupportedness in finite multi-objective optimisation.",
+  "version": "0.6.2",
   "author": [
     {
       "@type": "Person",
@@ -32,5 +32,6 @@
   "softwareRequirements": [
     "Python >=3.11",
     "No third-party runtime dependency for the standalone checker"
-  ]
+  ],
+  "dateModified": "2026-10-17"
 }

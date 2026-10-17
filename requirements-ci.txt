@@ -1,0 +1,8 @@
+# Minimal test/metadata stack, pinned to the locally recorded Python3.12 environment.
+jsonschema==4.26.0
+PyYAML==6.0.3
+attrs==26.1.0
+referencing==0.37.0
+jsonschema-specifications==2025.9.1
+rpds-py==2026.9.1
+typing_extensions==4.16.0

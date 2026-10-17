@@ -265,10 +265,12 @@ def _shortest_path_oracle(instance: dict[str, Any], weights: tuple[Fraction, ...
             head = edge["head"]
             candidate = distance + edge_costs[edge["id"]]
             incumbent = distances[head]
-            incumbent_edge = predecessor.get(head)
-            if incumbent is None or candidate < incumbent or (
-                candidate == incumbent and (incumbent_edge is None or edge["id"] < incumbent_edge)
-            ):
+            # Keep the existing predecessor on equal distance. Replacing it
+            # on a zero-cost cycle can create a cyclic predecessor chain even
+            # though every distance is correct. Sorted edges and the heap's
+            # (distance, node) order still make the strict-relaxation policy
+            # deterministic, including when some scalar weights are zero.
+            if incumbent is None or candidate < incumbent:
                 distances[head] = candidate
                 predecessor[head] = edge["id"]
                 heapq.heappush(queue, (candidate, head))

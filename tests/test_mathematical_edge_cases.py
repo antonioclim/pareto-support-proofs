@@ -108,7 +108,9 @@ class MathematicalEdgeCaseTests(unittest.TestCase):
     def test_public_metadata_and_evidence_locks(self):
         zenodo = json.loads((ROOT / '.zenodo.json').read_text(encoding='utf-8'))
         cff = (ROOT / 'CITATION.cff').read_text(encoding='utf-8')
-        self.assertEqual(zenodo['version'], '0.6.1')
+        current_version = '0.6.2'
+        retained_corpus_generator_version = '0.6.1'
+        self.assertEqual(zenodo['version'], current_version)
         self.assertNotIn('doi', zenodo)
         self.assertNotIn('\ndoi:', cff)
         self.assertNotIn('@', json.dumps(zenodo))
@@ -116,6 +118,10 @@ class MathematicalEdgeCaseTests(unittest.TestCase):
             json.loads(path.read_text(encoding='utf-8'))
             for path in sorted((ROOT / 'results/certificates').glob('*.json'))
         ]
+        self.assertEqual(
+            {item['provenance']['generator']['version'] for item in certificates},
+            {retained_corpus_generator_version},
+        )
         self.assertEqual(len(certificates), 225)
         self.assertEqual(sum(item['trust_level'] == 'P1_FULLY_CHECKABLE' for item in certificates), 213)
         self.assertEqual(sum(item['trust_level'] == 'P2_TRUSTED_ORACLE' for item in certificates), 12)

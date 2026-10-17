@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite the exact archived software release used in your work."
+message: "Local unpublished technical successor 0.6.2, prepared on 17 October 2026. No version DOI or public release tag has been assigned. Cite retained historical 0.6.1 evidence separately."
 title: "Pareto Support Proofs: exact certificates and standalone verification"
 type: software
 authors:
@@ -7,7 +7,7 @@ authors:
     given-names: Antonio
     orcid: "https://orcid.org/0000-0003-4745-0431"
     affiliation: "Bucharest University of Economic Studies"
-version: 0.6.1
+version: 0.6.2
 license: BSD-3-Clause
 abstract: >-
   An exact generator, a standalone checker, machine-readable schemas and
